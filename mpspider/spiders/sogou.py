@@ -36,9 +36,10 @@ class SogouSpider(CrawlSpider):
     #     return req
     #     
     #     
-    def __init__(self, query=''):
+    def __init__(self, query='', pagelimit=1):
         super(SogouSpider, self).__init__()
         self.start_urls[0] += query
+        self.pagelimit = pagelimit
 
     def parse_gzhjs(self, response):
         data=response.body
@@ -77,11 +78,11 @@ class SogouSpider(CrawlSpider):
     def parse_index(self, response):
         title = response.css('h3#weixinname::text').extract()[0].encode('utf-8')
         # parse ajax
-        for i in range(1, 4):
-            gzhjs_url = response.url.replace('/gzh', '/gzhjs') + '&page=' + str(i)
+        for i in range(self.pagelimit):
+            gzhjs_url = response.url.replace('/gzh', '/gzhjs') + '&page=' + str(i+1)
             yield scrapy.Request(url=gzhjs_url, callback=self.parse_gzhjs)
 
     def parse_item(self, response):
         title = response.css('h2#activity-name::text').extract()[0].encode('utf-8')
         print title
-        yield {'title':title}
+        yield {'title':title, 'url':response.url}
