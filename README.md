@@ -8,7 +8,7 @@
 ```
 git clone ssh://g@gitlab.baidu.com:8022/zdh/mpspider.git
 cd mpspider
-scrapy crawl sogou -a query=array -a pagelimit=2 --set DOWNLOAD_DELAY=5 -o array.csv -t csv
+scrapy crawl sogou -a query=小道消息 -a pagelimit=2 --set DOWNLOAD_DELAY=5 -o array.csv -t csv
 ```
 参数说明：
 * query: 公众号名称
@@ -17,17 +17,16 @@ scrapy crawl sogou -a query=array -a pagelimit=2 --set DOWNLOAD_DELAY=5 -o array
 * -o: 结果输出文件
 
 ### 结果样例
-array.csv, 正文没有提取
+正文没有提取
 ```
 date,url,author,title
-2016-03-23,http://mp.weixin.qq.com/s?__biz=MjM5OTIwMzQyMQ==&mid=403439969&idx=1&sn=4a3b10fda94f673f6576451bbbaca651&3rd=MzA3MDU4NTYzMw==&scene=6,张勇,做到slack就能成为slack吗？
-2016-03-07,http://mp.weixin.qq.com/s?__biz=MjM5OTIwMzQyMQ==&mid=403250471&idx=1&sn=6537e73240f2b670f85f1fcd4ba1f468&3rd=MzA3MDU4NTYzMw==&scene=6,张勇,我不知道你不知道我不知道你不知道
-2016-03-09,http://mp.weixin.qq.com/s?__biz=MjM5OTIwMzQyMQ==&mid=403275549&idx=1&sn=360c97b521d983f723799168a10007dd&3rd=MzA3MDU4NTYzMw==&scene=6,张勇,为什么需要刻意去做一些让自己不舒服的事情
-2016-03-10,http://mp.weixin.qq.com/s?__biz=MjM5OTIwMzQyMQ==&mid=403285320&idx=1&sn=271e350d68d8221f5a4a0488deb9b3be&3rd=MzA3MDU4NTYzMw==&scene=6,贝塔猫,也说AlphaGo
-2016-03-11,http://mp.weixin.qq.com/s?__biz=MjM5OTIwMzQyMQ==&mid=403296093&idx=1&sn=6b088243b476b3b7170b19c13866be57&3rd=MzA3MDU4NTYzMw==&scene=6,张勇,比行为更重要的是你的思维方式
-2016-03-12,http://mp.weixin.qq.com/s?__biz=MjM5OTIwMzQyMQ==&mid=403306060&idx=1&sn=dca407e5376b55e00ff05f1b29227586&3rd=MzA3MDU4NTYzMw==&scene=6,张勇,《纸牌屋》中的那一支香烟
-2016-03-15,http://mp.weixin.qq.com/s?__biz=MjM5OTIwMzQyMQ==&mid=403336509&idx=1&sn=4669f766c28297d23933ff3afa4d1407&3rd=MzA3MDU4NTYzMw==&scene=6,张勇,三种互联网思维（一）
-2016-03-16,http://mp.weixin.qq.com/s?__biz=MjM5OTIwMzQyMQ==&mid=403348301&idx=1&sn=f28e85dc5f2a4a041100b0e18f8465a9&3rd=MzA3MDU4NTYzMw==&scene=6,张勇,三种互联网思维（二）
-2016-03-18,http://mp.weixin.qq.com/s?__biz=MjM5OTIwMzQyMQ==&mid=403363035&idx=1&sn=4e50feefdb3b6b48f2de0b09e9d453b9&3rd=MzA3MDU4NTYzMw==&scene=6,张勇,看财报 2015 Q4 腾讯
-2016-03-21,http://mp.weixin.qq.com/s?__biz=MjM5OTIwMzQyMQ==&mid=403401255&idx=1&sn=7a82bd0025a2d3f4e1d9a4b5df78aef0&3rd=MzA3MDU4NTYzMw==&scene=6,张勇,为什么屏蔽百度抓取后，淘宝又在百度购买推广
+2016-03-24,http://mp.weixin.qq.com/s?__biz=MjM5ODIyMTE0MA==&mid=403183461&idx=1&sn=bfd21c414d66f77969e4cc85abb0f65e&3rd=MzA3MDU4NTYzMw==&scene=6,Fenng,中国最早的网民在网上都聊啥？2016-03-12,http://mp.weixin.qq.com/s?__biz=MjM5ODIyMTE0MA==&mid=402910106&idx=1&sn=aa4c9dfda6c960a0c2a15ce0cbf791bd&3rd=MzA3MDU4NTYzMw==&scene=6,Fenng,苹果这个月能发布什么新产品? 我期待这些产品的改进
+2016-03-15,http://mp.weixin.qq.com/s?__biz=MjM5ODIyMTE0MA==&mid=402983937&idx=1&sn=04e5093d153ff1743f882209cb849a5e&3rd=MzA3MDU4NTYzMw==&scene=6,Fenng,产品的价值观
+2016-03-15,http://mp.weixin.qq.com/s?__biz=MjM5ODIyMTE0MA==&mid=402994793&idx=1&sn=d911f33c83cb847857ec237f91cb59b3&3rd=MzA3MDU4NTYzMw==&scene=6,Fenng,我为什么讨厌「饿了么」们
+2016-03-16,http://mp.weixin.qq.com/s?__biz=MjM5ODIyMTE0MA==&mid=403008090&idx=1&sn=032880c60665ba45255a38a612b4158e&3rd=MzA3MDU4NTYzMw==&scene=6,Fenng,这一次，我们想改变医疗这个行业
+2016-03-17,http://mp.weixin.qq.com/s?__biz=MjM5ODIyMTE0MA==&mid=403040823&idx=1&sn=4c5504a5b9ca2ee73371bc0de8583e21&3rd=MzA3MDU4NTYzMw==&scene=6,Fenng,信息焦虑怎么缓解
+2016-03-18,http://mp.weixin.qq.com/s?__biz=MjM5ODIyMTE0MA==&mid=403064185&idx=1&sn=f7a8dd0008ba36210cd57bf194ac2327&3rd=MzA3MDU4NTYzMw==&scene=6,Fenng,时间追杀令
+2016-03-19,http://mp.weixin.qq.com/s?__biz=MjM5ODIyMTE0MA==&mid=403093815&idx=1&sn=8e849ef4d77407055b073d4eb55a2ea6&3rd=MzA3MDU4NTYzMw==&scene=6,Fenng,你们公司设计一张图片要多少成本?
+2016-03-21,http://mp.weixin.qq.com/s?__biz=MjM5ODIyMTE0MA==&mid=403125548&idx=1&sn=60c201d5631224331929bbb98b884b97&3rd=MzA3MDU4NTYzMw==&scene=6,Fenng,小道观察：猎豹移动的打法
+2016-03-22,http://mp.weixin.qq.com/s?__biz=MjM5ODIyMTE0MA==&mid=403140154&idx=1&sn=6c691056694035676e5dfe9101597d61&3rd=MzA3MDU4NTYzMw==&scene=6,Fenng,免于恐惧的自由
 ```
