@@ -8,7 +8,7 @@
 ```
 git clone ssh://g@gitlab.baidu.com:8022/zdh/mpspider.git
 cd mpspider
-scrapy crawl sogou -a query=小道消息 -a pagelimit=2 --set DOWNLOAD_DELAY=5 -o array.csv -t csv
+scrapy crawl sogou -a query=小道消息 -a pagelimit=1 --set DOWNLOAD_DELAY=5 -o items.csv -t csv
 ```
 参数说明：
 * query: 公众号名称
