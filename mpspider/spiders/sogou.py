@@ -83,7 +83,7 @@ class SogouSpider(CrawlSpider):
             yield scrapy.Request(url=gzhjs_url, callback=self.parse_gzhjs)
 
     def parse_item(self, response):
-        title = response.css('h2#activity-name::text').extract()[0].encode('utf-8')
+        title = response.css('h2#activity-name::text').extract()[0].encode('utf-8').strip()
         date = response.css('em#post-date::text').extract()[0].encode('utf-8')
         author = response.css('.rich_media_meta_list em::text').extract()[1].encode('utf-8')
         print title
