@@ -12,6 +12,7 @@ scrapy crawl sogou -a query=array -a pagelimit=2 --set DOWNLOAD_DELAY=5 -o array
 ```
 参数说明：
 * query: 公众号名称
+* pagelimit: 抓取的页数，一页10篇文章，默认为1
 * DOWNLOAD_DELAY: 抓取间隔，单位秒；搜狗对爬虫封禁比较变态， IP 被封禁之后需要小时级才能解封；默认间隔15秒，不要设置太小；
 * -o: 结果输出文件
 
