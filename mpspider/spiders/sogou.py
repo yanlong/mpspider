@@ -39,7 +39,7 @@ class SogouSpider(CrawlSpider):
     def __init__(self, query='', pagelimit=1):
         super(SogouSpider, self).__init__()
         self.start_urls[0] += query
-        self.pagelimit = pagelimit
+        self.pagelimit = int(pagelimit)
 
     def parse_gzhjs(self, response):
         data=response.body
@@ -84,5 +84,7 @@ class SogouSpider(CrawlSpider):
 
     def parse_item(self, response):
         title = response.css('h2#activity-name::text').extract()[0].encode('utf-8')
+        date = response.css('em#post-date::text').extract()[0].encode('utf-8')
+        author = response.css('.rich_media_meta_list em::text').extract()[1].encode('utf-8')
         print title
-        yield {'title':title, 'url':response.url}
+        yield {'title':title, 'date':date, 'author': author, 'url':response.url}
